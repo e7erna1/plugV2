@@ -1,0 +1,20 @@
+<idea-plugin>
+  <id>com.intellij.plugin.SendEmail</id>
+  <name>Send Email</name>
+  <description>This plugin sand email.</description>
+  <version>1.0</version>
+  <vendor>Ol3g</vendor>
+
+  <idea-version since-build="141.0"/>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <toolWindow id="Sample Calendar" secondary="true" icon="plus.png" anchor="bottom"
+      factoryClass="com.intellij.plugin.GUI">
+    </toolWindow>
+  </extensions>
+
+  <actions>
+
+  </actions>
+
+</idea-plugin>
