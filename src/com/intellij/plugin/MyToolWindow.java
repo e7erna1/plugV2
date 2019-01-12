@@ -24,16 +24,9 @@ public class MyToolWindow {
     BSend.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-
-       // System.out.println(YEmail.getText());
-       // System.out.println(YPass.getText());
-       // System.out.println(REmail.getText());
-       // System.out.println(Theme.getText());
-       // System.out.println(AText.getText());
-
-
         SendEmail.sendSomeEmail(YEmail.getText(), YPass.getText(), new String[]{REmail.getText()},
                 Theme.getText(), AText.getText());
+        toolWindow.hide(null);
       }
     });
 

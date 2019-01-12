@@ -8,7 +8,7 @@
   <idea-version since-build="141.0"/>
 
   <extensions defaultExtensionNs="com.intellij">
-    <toolWindow id="Sample Calendar" secondary="true" icon="plus.png" anchor="bottom"
+    <toolWindow id="Send Email" secondary="true" icon="email.png" anchor="bottom"
       factoryClass="com.intellij.plugin.GUI">
     </toolWindow>
   </extensions>

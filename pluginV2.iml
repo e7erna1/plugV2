@@ -12,7 +12,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://D:/Download/javax.mail.jar!/" />
+          <root url="jar://D:/Download/javax.mail.jre15_1.4.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

@@ -39,7 +39,7 @@
               </grid>
             </constraints>
             <properties>
-              <text value="olegegoroov@yandex.ru"/>
+              <text value=""/>
             </properties>
           </component>
           <component id="44ee9" class="javax.swing.JTextField" binding="YEmail">
@@ -49,7 +49,7 @@
               </grid>
             </constraints>
             <properties>
-              <text value="olegegorov555"/>
+              <text value=""/>
             </properties>
           </component>
           <component id="48579" class="javax.swing.JLabel">
@@ -75,7 +75,7 @@
               </grid>
             </constraints>
             <properties>
-              <text value="1"/>
+              <text value=""/>
             </properties>
           </component>
           <component id="5a845" class="javax.swing.JPasswordField" binding="YPass">
@@ -85,7 +85,7 @@
               </grid>
             </constraints>
             <properties>
-              <text value="DKFLBVBH99"/>
+              <text value=""/>
             </properties>
           </component>
           <component id="9fbff" class="javax.swing.JButton" binding="BSend">
@@ -111,7 +111,7 @@
               </grid>
             </constraints>
             <properties>
-              <text value="1"/>
+              <text value=""/>
             </properties>
           </component>
           <hspacer id="23b3a">

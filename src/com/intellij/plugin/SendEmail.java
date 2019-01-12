@@ -20,12 +20,8 @@ public class SendEmail {
     props.put("mail.smtp.port", "587");
     props.put("mail.smtp.auth", "true");
 
-    System.out.println(1);
     Session session = Session.getDefaultInstance(props);
-    System.out.println(2);
-    //Здесь не робит
     MimeMessage message = new MimeMessage(session);
-    System.out.println(3);
     try {
       message.setFrom(new InternetAddress(from));
       InternetAddress[] toAddress = new InternetAddress[to.length];
@@ -39,15 +35,10 @@ public class SendEmail {
       }
 
       message.setSubject(subject);
-      System.out.println(1);
       message.setText(body);
-      System.out.println(2);
       Transport transport = session.getTransport("smtp");
-      System.out.println(3);
       transport.connect(host, from, pass);
-      System.out.println(4);
       transport.sendMessage(message, message.getAllRecipients());
-      System.out.println(5);
       transport.close();
     } catch (Exception ex) {
       ex.printStackTrace();
