@@ -65,7 +65,7 @@ public class GUI implements ToolWindowFactory {
 
   @Override
   public void init(ToolWindow window) {
-
+    
   }
 
   @Override

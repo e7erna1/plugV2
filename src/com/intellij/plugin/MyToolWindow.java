@@ -4,10 +4,13 @@ import com.intellij.openapi.wm.ToolWindow;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComponent;
 import javax.swing.JPasswordField;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 public class MyToolWindow {
 
@@ -19,28 +22,100 @@ public class MyToolWindow {
   private JTextArea AText;
   private JTextField Theme;
   private javax.swing.JPanel JPanel;
+  private JCheckBox Save;
 
   MyToolWindow(ToolWindow toolWindow) {
     BSend.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
         SendEmail.sendSomeEmail(YEmail.getText(), YPass.getText(), new String[]{REmail.getText()},
-                Theme.getText(), AText.getText());
+            Theme.getText(), AText.getText());
         toolWindow.hide(null);
+        setClear();
+        if (!Save.isSelected()) {
+          YEmail.setText("");
+          YPass.setText("");
+        }
       }
     });
 
     BCancel.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        YEmail.setText("");
-        REmail.setText("");
-        YPass.setText("");
-        Theme.setText("");
-        AText.setText("");
+        setClear();
+        if (!Save.isSelected()) {
+          YEmail.setText("");
+          YPass.setText("");
+        }
         toolWindow.hide(null);
       }
     });
+
+    YEmail.getDocument().addDocumentListener(new DocumentListener() {
+      @Override
+      public void insertUpdate(DocumentEvent e) {
+        changed();
+      }
+
+      @Override
+      public void removeUpdate(DocumentEvent e) {
+        changed();
+      }
+
+      @Override
+      public void changedUpdate(DocumentEvent e) {
+        changed();
+      }
+    });
+
+    YPass.getDocument().addDocumentListener(new DocumentListener() {
+      @Override
+      public void insertUpdate(DocumentEvent e) {
+        changed();
+      }
+
+      @Override
+      public void removeUpdate(DocumentEvent e) {
+        changed();
+      }
+
+      @Override
+      public void changedUpdate(DocumentEvent e) {
+        changed();
+      }
+    });
+
+    REmail.getDocument().addDocumentListener(new DocumentListener() {
+      @Override
+      public void insertUpdate(DocumentEvent e) {
+        changed();
+      }
+
+      @Override
+      public void removeUpdate(DocumentEvent e) {
+        changed();
+      }
+
+      @Override
+      public void changedUpdate(DocumentEvent e) {
+        changed();
+      }
+    });
+
+  }
+
+  private void changed() {
+    if (YEmail.getText().isEmpty() || YPass.getText().isEmpty() || REmail.getText().isEmpty())
+      BSend.setEnabled(false);
+    else
+      BSend.setEnabled(true);
+  }
+
+
+  private void setClear() {
+    REmail.setText("");
+    Theme.setText("");
+    AText.setText("");
   }
 
   public void setData(GUI data) {
@@ -83,7 +158,7 @@ public class MyToolWindow {
     return false;
   }
 
-  public JComponent getContent() {
+  JComponent getContent() {
     return JPanel;
   }
 }

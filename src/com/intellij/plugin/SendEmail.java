@@ -1,6 +1,7 @@
 package com.intellij.plugin;
 
 
+import com.intellij.openapi.ui.Messages;
 import java.util.Properties;
 import javax.mail.Message;
 import javax.mail.Session;
@@ -39,8 +40,10 @@ public class SendEmail {
       Transport transport = session.getTransport("smtp");
       transport.connect(host, from, pass);
       transport.sendMessage(message, message.getAllRecipients());
+      Messages.showInfoMessage("Successfully sent", "Info");
       transport.close();
     } catch (Exception ex) {
+      Messages.showErrorDialog("There is something wrong!", "Attention!");
       ex.printStackTrace();
     }
   }
